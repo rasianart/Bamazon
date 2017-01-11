@@ -1,0 +1,25 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "database handling",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "console.table": "^0.8.0",
+    "inquirer": "^2.0.0",
+    "mysql": "^2.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rasianart/Bamazon.git"
+  },
+  "author": "Patrick Segura",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rasianart/Bamazon/issues"
+  },
+  "homepage": "https://github.com/rasianart/Bamazon#readme"
+}

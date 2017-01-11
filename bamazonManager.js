@@ -27,7 +27,7 @@ inquirer.prompt({
 				console.log('---------------');
 			})
 		});
-		process.exit();
+		// process.exit();
 	} else if (choice.options === 'View Low Inventory') {
 		connection.query('SELECT * FROM products WHERE stock_quantity < 5', (err, rows, fields) => {
 			if (err) throw err;
@@ -39,7 +39,7 @@ inquirer.prompt({
 				}
 				console.log('---------------');
 			})
-			process.exit();
+			// process.exit();
 		});
 	} else if (choice.options === 'Add to Inventory') {
 		inquirer.prompt([{
@@ -54,7 +54,7 @@ inquirer.prompt({
 			connection.query('UPDATE products SET stock_quantity = ? where item_id = ?', [add.amount, add.id], (err) => {
 				if (err) throw err;
 				console.log('Updated succesfully');
-				process.exit();
+				// process.exit();
 			});
 		})	
 	} else {
@@ -81,7 +81,7 @@ inquirer.prompt({
 															department_name: newProduct.department}, (err) => {
 			  if (err) throw err;
 			  console.log('Successfully inserted.');
-			  process.exit();
+			  // process.exit();
 			});
 		});
 	}

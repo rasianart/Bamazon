@@ -35,18 +35,23 @@ const run = () => {
 		connection.query('SELECT * FROM products where item_id = ?', id.id, (err, rows, fields) => {
 			if (err) throw err;
 			console.log(rows);
+			let departmentName = rows[0].department_name;
 			if (id.units > rows[0].stock_quantity) {
 				console.log('Insufficient Quantity.');
-				process.exit(); 
+				// process.exit(); 
 			} else {
 				let newQuantity = rows[0].stock_quantity - id.units;
 				let newPrice = id.units * rows[0].price;
-				connection.query('UPDATE products SET stock_quantity = ? where item_id = ?', [newQuantity, id.id], (err) => {
+				connection.query('UPDATE products SET stock_quantity = ?, product_sales = product_sales + ? where item_id = ?', [newQuantity, newPrice, id.id], (err) => {
+					if (err) throw err;
+					console.log('Updated succesfully');
+				});
+				connection.query('UPDATE departments SET total_sales = total_sales + ? where department_name = ?', [newPrice, departmentName], (err) => {
 					if (err) throw err;
 					console.log('Updated succesfully');
 				});
 				console.log('Your total price is $' + newPrice);
-				process.exit();
+				// process.exit();
 			}
 		});
 	});
