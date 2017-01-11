@@ -13,11 +13,11 @@ const connection = mysql.createConnection({
 inquirer.prompt({
 	type: 'list',
 	name: 'options',
-	message: 'Choose a msupervisor tool.',
+	message: 'Choose a supervisor tool.',
 	choices: ['View Product Sales by Department', 'Create New Department']
 }).then((choice) => {
 	if (choice.options === 'View Product Sales by Department') {
-		connection.query('SELECT *, total_sales - over_head_costs as total_profit FROM departments', (err, rows, fields) => {
+		connection.query('SELECT *, total_sales - over_head_costs AS total_profit FROM departments', (err, rows, fields) => {
 			if (err) throw err;
 			console.table('Product Sales by Department', rows);
 		});
