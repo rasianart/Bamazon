@@ -1,6 +1,7 @@
-const mysql = require('mysql');
-const inquirer = require('inquirer');
+const mysql       = require('mysql');
+const inquirer    = require('inquirer');
 const credentials = require('./protected');
+const rerun       = require('./rerun');
 
 const connection = mysql.createConnection({
   host     : credentials.host,
@@ -34,11 +35,10 @@ const run = () => {
 	}]).then((id) => {
 		connection.query('SELECT * FROM products where item_id = ?', id.id, (err, rows, fields) => {
 			if (err) throw err;
-			console.log(rows);
 			let departmentName = rows[0].department_name;
 			if (id.units > rows[0].stock_quantity) {
 				console.log('Insufficient Quantity.');
-				// process.exit(); 
+				rerun(run);
 			} else {
 				let newQuantity = rows[0].stock_quantity - id.units;
 				let newPrice = id.units * rows[0].price;
@@ -48,12 +48,10 @@ const run = () => {
 				});
 				connection.query('UPDATE departments SET total_sales = total_sales + ? where department_name = ?', [newPrice, departmentName], (err) => {
 					if (err) throw err;
-					console.log('Updated succesfully');
+          console.log('Your total price is $' + newPrice);
+          rerun(run);
 				});
-				console.log('Your total price is $' + newPrice);
-				// process.exit();
 			}
 		});
 	});
 }
-
