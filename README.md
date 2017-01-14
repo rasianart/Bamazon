@@ -7,7 +7,7 @@ Customer Mode
 * View Inventory
 * Purchase Items
 
-![alt text](https://github.com/rasianart/Bamazon/blob/master/images/bam1.png)
+![alt text](https://github.com/rasianart/Bamazon/blob/master/images/bam2.png)
 
 Manager Mode
 
