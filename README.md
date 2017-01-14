@@ -7,6 +7,8 @@ Customer Mode
 * View Inventory
 * Purchase Items
 
+![alt text](https://github.com/rasianart/Bamazon/blob/master/images/bam3.png)
+
 Manager Mode
 
 * View Invetory
@@ -17,7 +19,9 @@ Manager Mode
 ![alt text](https://github.com/rasianart/Bamazon/blob/master/images/bam1.png)
 
 Supervisor Mode
--View Product Sales by Department
--Create New Department
+* View Product Sales by Department
+* Create New Department
+
+![alt text](https://github.com/rasianart/Bamazon/blob/master/images/bam2.png)
 
 
