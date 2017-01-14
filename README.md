@@ -16,4 +16,4 @@ Supervisor Mode
 -View Product Sales by Department
 -Create New Department
 
-(https://github.com/rasianart/Bamazon/blob/master/images/bam1.png)
+![alt text](https://github.com/rasianart/Bamazon/blob/master/images/bam1.png)
