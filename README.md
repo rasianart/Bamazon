@@ -3,13 +3,13 @@
 Bamazon is an intuitive and streamlined application for purchasing and managing inventory.
 
 Customer Mode
-
-⋅⋅*View Inventory
-⋅⋅*Purchase Items
+*
+*View Inventory
+*Purchase Items
 
 Manager Mode
 
-⋅⋅*View Invetory
+*View Invetory
 ⋅⋅*View Low Inventory
 ⋅⋅*Add to Inventory
 ⋅⋅*Add New Products
