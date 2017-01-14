@@ -1,7 +1,6 @@
-const mysql       = require('mysql');
-const inquirer    = require('inquirer');
+const mysql = require('mysql');
+const inquirer = require('inquirer');
 const credentials = require('./protected');
-const rerun       = require('./rerun');
 
 const connection = mysql.createConnection({
   host     : credentials.host,
